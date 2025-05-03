@@ -8,7 +8,8 @@ export default defineComponent({
       const x = event.clientX
       const y = event.clientY
       const radius = Math.hypot(
-        Math.max(x, window.innerWidth - x, Math.max(y, window.innerHeight - y)),
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y),
       )
       const transition = document.startViewTransition(() => {
         toggleDark()
@@ -19,7 +20,7 @@ export default defineComponent({
             clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`],
           },
           {
-            duration: 400,
+            duration: 500,
             easing: 'ease-in-out',
             pseudoElement: '::view-transition-new(root)',
           },

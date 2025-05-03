@@ -1,7 +1,7 @@
-import { defineConfig, presetAttributify, presetIcons, presetWind4, transformerDirectives, transformerVariantGroup } from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, presetUno, transformerDirectives, transformerVariantGroup } from 'unocss'
 
 export default defineConfig({
-  presets: [presetWind4(), presetAttributify(), presetIcons({
+  presets: [presetUno(), presetAttributify(), presetIcons({
     scale: 1.2,
     prefix: 'i-',
   })],
