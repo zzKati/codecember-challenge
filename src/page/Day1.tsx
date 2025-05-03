@@ -7,7 +7,7 @@ import { isDark } from '../composables/dark'
 export default defineComponent({
   name: 'Day1',
   setup() {
-    const canvasRef = ref<HTMLCanvasElement>()
+    const canvasRef = ref<HTMLDivElement>()
     const width = 300
     const height = width
     const length = 8
