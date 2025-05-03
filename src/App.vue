@@ -3,7 +3,7 @@ import TheFooter from './components/TheFooter.tsx'
 </script>
 
 <template>
-  <div class=" w-screen h-screen">
+  <div class=" w-screen h-screen" flex="~ col">
     <RouterView />
     <TheFooter />
   </div>
