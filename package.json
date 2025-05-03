@@ -10,8 +10,11 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@types/node": "^22.15.3",
     "@vitejs/plugin-vue-jsx": "^4.1.2",
-    "vue": "^3.5.13"
+    "@vueuse/core": "^13.1.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.12.0",
