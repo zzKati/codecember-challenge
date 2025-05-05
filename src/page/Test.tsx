@@ -1,5 +1,4 @@
 import { defineComponent, onMounted, ref } from 'vue'
-import { isDark } from '../composables/dark'
 
 export default defineComponent({
   name: 'Test',
@@ -50,7 +49,7 @@ export default defineComponent({
             line[j + 1].x,
             line[j + 1].y,
           )
-          ctx.strokeStyle = isDark.value ? `rgba(255,255,255,0.5)` : `rgba(0,0,0,0.5)`
+          ctx.strokeStyle = `rgba(100,100,100,${Math.random() * 0.8 + 0.2})`
           ctx.save()
           ctx.globalCompositeOperation = 'destination-out'
           ctx.fillStyle = ctx.strokeStyle
