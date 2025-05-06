@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import TheFooter from './components/TheFooter.tsx'
+import TheHeader from './components/TheHeader.tsx'
 </script>
 
 <template>
   <div class=" w-screen h-screen text-gray" flex="~ col">
-    <div class=" flex flex-1 justify-center items-center " >
-      <RouterView />  
+    <TheHeader />
+    <div class=" flex flex-1 justify-center items-center ">
+      <RouterView />
     </div>
     <TheFooter />
   </div>
@@ -14,4 +16,3 @@ import TheFooter from './components/TheFooter.tsx'
 <style scoped>
 
 </style>
-
