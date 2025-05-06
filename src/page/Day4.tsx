@@ -1,6 +1,5 @@
 import { defineComponent, onMounted, ref,reactive } from 'vue'
 import { initCanvas, random } from '../utils'
-import { isDark } from '../composables/dark'
 
 export default defineComponent({
   name: 'Day4',
