@@ -62,9 +62,7 @@ export default defineComponent({
     })
     
 
-    return () => <div class="flex-1 w-full flex  justify-center items-center " >
-      <div ref={canvasRef} />
-    </div>
+    return () => <div ref={canvasRef} />
   }
 })
     

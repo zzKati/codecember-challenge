@@ -47,10 +47,6 @@ export default defineComponent({
         return () => sketch.remove()
       }
     })
-    return () => (
-      <div class="flex-1 flex justify-center items-center ">
-        <div ref={canvasRef}></div>
-      </div>
-    )
+    return () => <div ref={canvasRef}></div>
   },
 })

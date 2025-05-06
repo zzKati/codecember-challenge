@@ -4,7 +4,9 @@ import TheFooter from './components/TheFooter.tsx'
 
 <template>
   <div class=" w-screen h-screen text-gray" flex="~ col">
-    <RouterView />
+    <div class=" flex flex-1 justify-center items-center " >
+      <RouterView />  
+    </div>
     <TheFooter />
   </div>
 </template>
@@ -12,3 +14,4 @@ import TheFooter from './components/TheFooter.tsx'
 <style scoped>
 
 </style>
+

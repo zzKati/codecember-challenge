@@ -26,7 +26,6 @@ export default defineComponent({
             line.push({
               x: j,
               y: i + random,
-              // TODO: 随机生成一个颜色
             })
           }
           lines.push(line)
@@ -49,7 +48,7 @@ export default defineComponent({
             line[j + 1].x,
             line[j + 1].y,
           )
-          ctx.strokeStyle = `rgba(100,100,100,${Math.random() * 0.8 + 0.2})`
+          ctx.strokeStyle = `rgba(100,100,100)`
           ctx.save()
           ctx.globalCompositeOperation = 'destination-out'
           ctx.fillStyle = ctx.strokeStyle
@@ -60,10 +59,6 @@ export default defineComponent({
       }
     })
 
-    return () => (
-      <div class="flex-1 flex items-center justify-center">
-        <canvas ref={canvasRef} width={width} height={height} />
-      </div>
-    )
+    return () =>  <canvas ref={canvasRef} width={width} height={height} />
   },
 })
