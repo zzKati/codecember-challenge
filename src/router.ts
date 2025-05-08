@@ -27,6 +27,10 @@ const routes: RouteRecordRaw[] = [
     component: () => import('../src/page/Day5.tsx'),
   },
   {
+    path: '/6',
+    component: () => import('../src/page/Day6.tsx'),
+  },
+  {
     path: '/test',
     component: () => import('../src/page/Test.tsx'),
   },

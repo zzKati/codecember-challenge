@@ -11,6 +11,7 @@ export default defineComponent({
         <RouterLink to="/3">3</RouterLink>
         <RouterLink to="/4">4</RouterLink>
         <RouterLink to="/5">5</RouterLink>
+        <RouterLink to="/6">6</RouterLink>
       </div>
     )
   },
