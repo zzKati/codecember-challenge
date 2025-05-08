@@ -28,11 +28,11 @@ export default defineComponent({
       })
     }
     return () => (
-      <div class="flex w-screen h-50px justify-center items-center ">
+      <div class="flex w-screen h-50px justify-center items-center gap-2 ">
         {
           isDark.value ? <div class="i-carbon-sun" onClick={handleClick} /> : <div class="i-carbon-moon" onClick={handleClick} />
         }
-
+        <div class="i-mdi-github" onClick={() => window.open('https://github.com/zzKati/codecember-challenge')}  ></div>
       </div>
     )
   },
