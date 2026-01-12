@@ -15,6 +15,7 @@ export default defineComponent({
     const strokeWidth = 2
     const rows = col
 
+    // is equal to Math.ceil(w/(length+margin))
     function getCols(w: number, length: number, margin: number) {
       let totalLength = 0
       let count = 0
@@ -36,15 +37,18 @@ export default defineComponent({
             for (let i = 0; i < rows; i++) {
               for (let j = 0; j < rows; j++) {
                 const currentOffset = {
-                  x: j * length + (j + 1) * margin,
+                  // x -> left to right | y -> top to bottom
+                  x: j * length + (j + 1) * margin,  
                   y: (i + 1) * length + (i + 1) * margin,
-                }
+                }              
 
+                // delta is a vector from the mouse to the current offset
                 const delta = {
                   x: currentOffset.x - p.mouseX,
                   y: currentOffset.y - p.mouseY,
                 }
 
+                // theta is the angle between the delta vector and the x-axis
                 const theta = Math.atan2(delta.y, delta.x)
 
                 p.push()
@@ -60,7 +64,6 @@ export default defineComponent({
     })
 
     onUnmounted(()=>{
-      console.log("remove execute")
       P5Ref.value?.remove()
     })
 
