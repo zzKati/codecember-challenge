@@ -1,5 +1,5 @@
 import P5 from 'p5'
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { isDark } from '../composables/dark'
 import { random } from '../utils'
 
@@ -15,11 +15,12 @@ export default defineComponent({
   name: 'Day6',
   setup() {
     const canvasRef = ref<HTMLDivElement>()
+    const P5Ref = ref<P5>()
     onMounted(() => {
       const width = 500
       const height = width
       // const data = ref<data[]>([])
-      const p5 = new P5((p: P5) => {
+      P5Ref.value = new P5((p: P5) => {
         function generateData() {
           const xCenter = width / 2
           const yCenter = height / 2
@@ -71,10 +72,13 @@ export default defineComponent({
           })
           
         }
-      }, canvasRef.value)
-
-      return p5.remove()
+      }, canvasRef.value)      
     })
+
+    onUnmounted(()=>{
+      P5Ref.value?.remove()
+    })
+
     return () => <div ref={canvasRef} />
   },
 })
