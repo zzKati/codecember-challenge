@@ -1,39 +1,30 @@
 import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHistory } from 'vue-router'
 
+const getRoutes = () => {
+  const modules = import.meta.glob('./page/*.tsx')
+
+  return Object.entries(modules).map(([filePath, component]) => {
+    const regex = /Day(\d+).tsx$/
+    const match = filePath.match(regex)
+    if (!match) {
+      return null
+    }
+    const path = match[1]
+
+    return {
+      path: `/${path}`,
+      component,
+    } as RouteRecordRaw
+  }).filter(Boolean) as RouteRecordRaw[]
+}
+
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('../src/components/Home.tsx'),
   },
-  {
-    path: '/1',
-    component: () => import('../src/page/Day1.tsx'),
-  },
-  {
-    path: '/2',
-    component: () => import('../src/page/Day2.tsx'),
-  },
-  {
-    path: '/3',
-    component: () => import('../src/page/Day3.tsx'),
-  },
-  {
-    path: '/4',
-    component: () => import('../src/page/Day4.tsx'),
-  },
-  {
-    path: '/5',
-    component: () => import('../src/page/Day5.tsx'),
-  },
-  {
-    path: '/6',
-    component: () => import('../src/page/Day6.tsx'),
-  },
-  {
-    path: '/test',
-    component: () => import('../src/page/Test.tsx'),
-  },
+  ...getRoutes(),
 ]
 
 export const router = createRouter({

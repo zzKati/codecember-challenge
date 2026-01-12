@@ -12,7 +12,3 @@ import TheHeader from './components/TheHeader.tsx'
     <TheFooter />
   </div>
 </template>
-
-<style scoped>
-
-</style>
