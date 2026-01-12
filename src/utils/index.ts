@@ -1,9 +1,6 @@
 export function initCanvas(canvas: HTMLCanvasElement,width:number,height:number) {
   const ctx = canvas.getContext('2d')!
-  const dpr = window.devicePixelRatio || 1
-  // @ts-ignore
-  const bsr = ctx.webkitBackingStorePixelRatio || ctx.mozBackingStorePixelRatio || ctx.msBackingStorePixelRatio || ctx.oBackingStorePixelRatio || ctx.backingStorePixelRatio || 1
-  const ratio = dpr / bsr
+  const ratio = window.devicePixelRatio || 1
   canvas.style.width = `${width}px`
   canvas.style.height = `${height}px`
   canvas.width = width * ratio
