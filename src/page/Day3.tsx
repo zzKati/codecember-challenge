@@ -1,7 +1,7 @@
 import { defineComponent, onMounted, ref } from 'vue'
 
 export default defineComponent({
-  name: 'Test',
+  name: 'Day3',
   setup() {
     const canvasRef = ref<HTMLCanvasElement>()
     const width = 300

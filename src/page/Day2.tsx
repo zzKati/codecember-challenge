@@ -17,15 +17,24 @@ export default defineComponent({
           }
           p.draw = () => {
             p.background(isDark.value ? '#121212' : '#fff')
+
+            // set stroke color to gray
             p.stroke(100)
+
+            // set fill color to transparent
             p.noFill()
             p.strokeWeight(width * 0.01)
 
             const time = p.millis() / 1000
 
-            const pinpong = p.sin(time * 0.75 - 0.5 * p.PI) * 0.5 + 0.5 // 创建一个从0到1的值
+            // pinpong is a number loop between 0 and 1
+            const pinpong = p.sin(time * 0.75 - 0.5 * p.PI) * 0.5 + 0.5 
 
-            const points = p.lerp(2, 100, p.pow(pinpong, 2.5)) // 使用 ping + pow 去生成一个非线形的生成过程
+            
+            // lerp(start, end, t) = start + (end - start) * t
+            // points is a number loop between 2 and 100
+            const points = p.lerp(2, 100, p.pow(pinpong, 2.5))
+
 
             const radius = width / 2.1
             const angle = pinpong * p.PI * 2
