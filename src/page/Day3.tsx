@@ -1,4 +1,5 @@
 import { defineComponent, onMounted, ref } from 'vue'
+import { initCanvas } from '../utils'
 
 export default defineComponent({
   name: 'Day3',
@@ -10,7 +11,7 @@ export default defineComponent({
     onMounted(() => {
       if (canvasRef.value) {
         const canvas = canvasRef.value
-        const ctx = canvas.getContext('2d')!
+        const ctx = initCanvas(canvas, width, height)
         ctx.lineWidth = 2
 
         const step = 10
@@ -59,6 +60,6 @@ export default defineComponent({
       }
     })
 
-    return () =>  <canvas ref={canvasRef} width={width} height={height} />
+    return () => <canvas ref={canvasRef} width={width} height={height} />
   },
 })
