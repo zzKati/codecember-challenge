@@ -1,6 +1,5 @@
 import type P5 from 'p5'
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
-import { isDark } from '../composables/dark'
 import { initCanvas } from '../utils'
 
 export default defineComponent({
@@ -14,7 +13,7 @@ export default defineComponent({
     onMounted(() => {
       const ctx = initCanvas(canvasRef.value!, width, height)
       ctx.lineCap = 'square'
-      ctx.lineWidth = 2
+      ctx.lineWidth = 1.5
       ctx.strokeStyle = 'rgba(100,100,100)'
 
       ctx.beginPath()
