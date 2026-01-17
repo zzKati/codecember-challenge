@@ -18,3 +18,26 @@ html.dark {
 ::view-transition-new(root){
   animation: none;
 }
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"] {
+  /* 重置浏览器默认外观 */
+  appearance: none;     
+  -webkit-appearance: none;
+  background-color: transparent;
+  outline: none; 
+  margin: 0;
+  border-radius: 0; 
+  border: none;
+}
