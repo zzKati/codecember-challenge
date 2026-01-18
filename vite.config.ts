@@ -20,5 +20,14 @@ export default defineConfig({
       '~': `${path.resolve(__dirname, 'src')}/`,
     },
   },
-  base: '/codecember-challenge/',
+  base: (() => {
+    if (process.env.GITHUB_REPOSITORY) {
+      const repoName = process.env.GITHUB_REPOSITORY.split('/')[1]
+      if (repoName.endsWith('.github.io')) {
+        return '/'
+      }
+      return `/${repoName}/`
+    }
+    return '/'
+  })(),
 })

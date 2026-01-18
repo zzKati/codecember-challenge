@@ -1,5 +1,5 @@
 import type { RouteRecordRaw } from 'vue-router'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const getRoutes = () => {
   const modules = import.meta.glob('./page/*.tsx')
@@ -28,6 +28,6 @@ const routes: RouteRecordRaw[] = [
 ]
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 })
