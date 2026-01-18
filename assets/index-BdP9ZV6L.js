@@ -1,0 +1,1 @@
+function d(t,e,o){const n=t.getContext("2d"),i=window.devicePixelRatio||1;return t.style.width=`${e}px`,t.style.height=`${o}px`,t.width=e*i,t.height=o*i,n.scale(i,i),n}function r(t,e){return Math.random()*(e-t)+t}const s=(t,e=r(50,100),o=r(20,80))=>`hsl(${t}, ${e}%, ${o}%)`;export{s as a,d as i,r};
