@@ -1,1 +1,0 @@
-import{d as e,c as a,e as t}from"./index-DA6xDQd3.js";const o=e({name:"Home",setup(){return()=>a("div",{class:" flex-1 flex w-full justify-center items-start"},[t("learn canvas and make demo")])}});export{o as default};
