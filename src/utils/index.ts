@@ -21,4 +21,4 @@ export function random(min:number,max:number){
  * @param {number} lightness 0-100
  * @returns {string} a hsl color string
  */
-export const randomShade = (hue:number,saturation:number = random(50,100),lightness:number = random(20,80)) => `hsl(${hue}, ${saturation}%, ${lightness}%)`
+export const randomShade = (hue:number,saturation:number = random(50,100),lightness:number = random(20,80)) => `hsl(${hue}, ${saturation}%, ${lightness}%, 1.0)`

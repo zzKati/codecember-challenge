@@ -108,21 +108,14 @@ export default defineComponent({
 
 
 
-    return () => <div class="flex flex-col items-center gap-2" >
-      <div class="flex gap-2" >  
-        <button class="p-1 " onClick={() => {
-          setRandomHue()
-          draw(ctxRef.value!)
-        }}>Draw Random Color</button>
-        <button class="p-1 " onClick={() => {
-          generateDot()
-          generateDotLines()
-          draw(ctxRef.value!)
-        }}>Draw Random Shape</button>
-      </div>
-      
-      <canvas ref ={canvasRef} />
-    </div>
+    return () => 
+      <canvas class="cursor-pointer" onClick={()=>{
+        setRandomHue()
+        generateDot()
+        generateDotLines()
+        draw(ctxRef.value!)
+      }} ref ={canvasRef} />
+    
   },
 })
 
